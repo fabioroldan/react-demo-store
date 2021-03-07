@@ -1,3 +1,11 @@
+:root {
+  --color-alpha: #645dc3e5;
+  --color-beta: #133c50ff;
+  --color-gamma: #f7c673ff;
+  --color-psi: #1f1f1f;
+  --color-omega: #fff;
+}
+
 .App {
   text-align: center;
 }

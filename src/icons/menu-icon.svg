@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+  <defs/>
+  <defs>
+    <style>
+      .str0{ cursor: pointer; stroke:#645dc3e5;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313}.fil0{fill:none}
+    </style>
+  </defs>
+  <g id="Layer_x0020_1">
+    <path d="M21 20H7M7 8h14M7 14h14" class="fil0 str0"/>
+  </g>
+</svg>
