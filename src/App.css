@@ -6,6 +6,25 @@
   --color-omega: #fff;
 }
 
+
+.icon-btn {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+  appearance: unset;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  
+}
+
+.icon-btn:active,
+.icon-btn:focus {
+  outline: none;
+}
+
+
 .App {
   text-align: center;
 }

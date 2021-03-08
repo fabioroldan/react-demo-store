@@ -3,6 +3,7 @@ import logo from "../../logo.svg";
 import closeIcon from "../../icons/close-icon.svg";
 import menuIcon from "../../icons/menu-icon.svg";
 import "./NavBar.css"
+import CartWidget from '../CartWidget/CartWidget';
 
 class NavBar extends Component {
   constructor(props) {
@@ -18,12 +19,13 @@ class NavBar extends Component {
     this.setState({ active: false })
     console.log("blur");
   };
-  
+
   render() {
     return (
       <nav className='navbar'>
         <img src={logo} className="navbar__logo" alt="logo" />
-        <button className="navbar__menu-icon" onClick={this.handleClick} onBlur={this.handleBlur}>
+        <CartWidget />
+        <button className="icon-btn menu-btn" onClick={this.handleClick} onBlur={this.handleBlur}>
           <img src={this.state.active ? closeIcon : menuIcon} alt="" />
         </button>
         <ul className={`navbar__menu ${this.state.active ? 'active' : ''}`} >

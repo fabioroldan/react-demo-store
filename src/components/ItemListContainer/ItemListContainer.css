@@ -1,0 +1,8 @@
+.item-list-container{
+    height: 100vh;
+    padding: 1rem;
+}
+
+.item-list-container h3 {
+    text-align: left;
+}
