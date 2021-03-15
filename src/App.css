@@ -6,7 +6,6 @@
   --color-omega: #fff;
 }
 
-
 .icon-btn {
   cursor: pointer;
   position: relative;
@@ -23,7 +22,6 @@
 .icon-btn:focus {
   outline: none;
 }
-
 
 .App {
   text-align: center;

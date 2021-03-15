@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import "./ItemListContainer.css";
 import ItemCount from "../ItemCount/ItemCount";
+import ItemList from "../ItemList/ItemList";
 
 function ItemListContainer(props) {
     const [currentStock, setCurrentStock] = useState(5);
@@ -15,12 +16,16 @@ function ItemListContainer(props) {
     return (
         <div className="item-list-container">
             <h3>
-                {props.greeting}
+                {props.items ? '' : props.greeting}
             </h3>
-            <h3>
-                Items in cart: {cart}
-            </h3>
-            <ItemCount stock={currentStock} initial={0} onAdd={addToCart} />
+            <ItemList items={props.items} />
+            <div style={{margin: '1rem', padding: '1rem'}}>
+                <hr/>
+                <h3>
+                    Items in cart: {cart}
+                </h3>
+                <ItemCount stock={currentStock} initial={0} onAdd={addToCart} />
+            </div>
         </div>
     )
 

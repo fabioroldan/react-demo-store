@@ -17,7 +17,6 @@ class CartWidget extends Component {
 
     handleBlur = () => {
         this.setState({ active: false })
-        console.log("blur");
     };
 
     render() {
