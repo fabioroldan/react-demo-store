@@ -3,6 +3,8 @@
     "id": "jV3KMmQe",
     "title": "Lorem ipsum",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "stock": 12,
     "price": 31,
     "pictureUrl": "./images/placeholder-images-product-1_large.png"
   },
@@ -10,6 +12,8 @@
     "id": "JxK1EEtT",
     "title": "Etiam lacinia",
     "description": "Orci vitae sapien dapibus, ut condimentum odio varius.",
+    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "stock": 5,
     "price": 41,
     "pictureUrl": "./images/placeholder-images-product-2_large.png"
   },
@@ -17,6 +21,8 @@
     "id": "8rN8T0zK",
     "title": "Morbi vel",
     "description": "Donec vel ipsum ac libero rhoncus volutpat.",
+    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "stock": 22,
     "price": 59,
     "pictureUrl": "./images/placeholder-images-product-3_large.png"
   },
@@ -24,6 +30,8 @@
     "id": "wqDXMAbW",
     "title": "Aliquam porta",
     "description": "Gravida lorem quis aliquet. Nullam ultricies varius nibh.",
+    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "stock": 43,
     "price": 26,
     "pictureUrl": "./images/placeholder-images-product-4_large.png"
   },
@@ -31,6 +39,8 @@
     "id": "7HCQnJ9o",
     "title": "Nullam ultricies",
     "description": "Varius nibh, in auctor metus euismod a.",
+    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "stock": 3,
     "price": 53,
     "pictureUrl": "./images/placeholder-images-product-5_large.png"
   },
@@ -38,6 +48,8 @@
     "id": "nBli3bjv",
     "title": "Cras at velit",
     "description": "Quis ante fermentum tempus.",
+    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "stock": 1,
     "price": 58,
     "pictureUrl": "./images/placeholder-images-product-6_large.png"
   },
@@ -45,6 +57,8 @@
     "id": "gW1walU2",
     "title": "Morbi tincidunt ",
     "description": "Praesent convallis tortor ligula, eget viverra felis dictum quis.",
+    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "stock": 3,
     "price": 97,
     "pictureUrl": "./images/placeholder-images-collection-1_large.png"
   },
@@ -52,6 +66,8 @@
     "id": "ynqtarAi",
     "title": "Donec pulvinar tellus",
     "description": "Rhoncus mi a condimentum. Etiam at est dolor.",
+    "fullDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "stock": 200,
     "price": 93,
     "pictureUrl": "./images/placeholder-images-collection-2_large.png"
   }

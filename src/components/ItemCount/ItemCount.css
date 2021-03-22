@@ -3,7 +3,7 @@
   flex-direction: column;
   height: auto;
   max-width: 20rem;
-  margin: 1rem 0;
+  margin: 0 0 1rem 1rem;
   padding: 1rem;
   border: solid 1px var(--color-alpha);
   border-top: 3px solid var(--color-alpha);
@@ -13,14 +13,20 @@
   display: block;
   width: 100%;
   height: 2rem;
+  cursor: pointer;
   margin: 1rem 0;
   border: none;
   background-color: var(--color-gamma);
   color: white;
 }
 
-.btn--big:hover{
+.btn--big:hover {
+  font-weight: bold;
+}
 
+.btn--big:disabled {
+  filter: grayscale(0.5);
+  cursor: not-allowed;
 }
 
 .btn-group {
@@ -31,13 +37,14 @@
 
 .input-number::-webkit-inner-spin-button,
 .input-number::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 .group .plus,
 .group .minus {
-    width: 2rem;
-    font-weight: bold;
+  cursor: pointer;
+  width: 2rem;
+  font-weight: bold;
 }
 
 .group .plus:hover,
@@ -48,16 +55,16 @@
 .group .plus,
 .group .minus,
 .group .input-number {
-    height: 2rem;
-    border: none;
-    border-radius: 0;
-    background-color: gainsboro;
+  height: 2rem;
+  border: none;
+  border-radius: 0;
+  background-color: gainsboro;
 }
 
 .input-number {
-    padding: 0 1rem;
-    width: calc(100% - 6rem);
-    margin: 1rem 0;
+  padding: 0 1rem;
+  width: calc(100% - 6rem);
+  margin: 1rem 0;
 }
 
 .input-number:focus {

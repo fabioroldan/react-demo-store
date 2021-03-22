@@ -15,7 +15,6 @@
   background-color: transparent;
   border: none;
   margin: 0;
-  
 }
 
 .icon-btn:active,
@@ -25,6 +24,7 @@
 
 .App {
   text-align: center;
+  height: 101vh;
 }
 
 .App-logo {

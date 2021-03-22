@@ -35,7 +35,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
                 <input className="input-number" type="number" value={itemsQ} placeholder={initial} onChange={(e) => handleChange(e)}></input>
                 <button className="plus" onClick={(e) => handleMD(e)} disabled={itemsQ >= stock}>+</button>
             </div>
-            <button className="btn--big" onClick={(e) =>{ onAdd(e, itemsQ); setItemsQ(0)}}>ADD TO CART</button>
+            <button className="btn--big" onClick={(e) =>{ onAdd(e, itemsQ); setItemsQ(0)}} disabled>ADD TO CART</button>
         </form>
     );
 };

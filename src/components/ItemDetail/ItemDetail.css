@@ -1,0 +1,9 @@
+.item-detail {
+  max-width: 40rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: solid 1px var(--color-alpha);
+  border-top: 3px solid var(--color-alpha);
+  position: relative;
+}
+
