@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from "../../logo.svg";
 import closeIcon from "../../icons/close-icon.svg";
 import menuIcon from "../../icons/menu-icon.svg";
@@ -17,21 +18,22 @@ class NavBar extends Component {
 
   handleBlur = () => {
     this.setState({ active: false })
-    console.log("blur");
   };
 
   render() {
     return (
       <nav className='navbar'>
-        <img src={logo} className="navbar__logo" alt="logo" />
+        <NavLink to={'/'}>
+          <img src={logo} className="navbar__logo" alt="logo" />
+        </NavLink>
         <CartWidget />
         <button className="icon-btn menu-btn" onClick={this.handleClick} onBlur={this.handleBlur}>
           <img src={this.state.active ? closeIcon : menuIcon} alt="" />
         </button>
         <ul className={`navbar__menu ${this.state.active ? 'active' : ''}`} >
-          <a className="navbar__link active" href="#home"> Home </a>
-          <a className="navbar__link" href="#about-us"> About us </a>
-          <a className="navbar__link" href="#store"> Store </a>
+          <NavLink to={'/'} className="navbar__link " exact activeClassName="active" > Home </NavLink>
+          <NavLink to={'/about-us'} className="navbar__link " exact> About us </NavLink>
+          <NavLink to={'/store'} className="navbar__link "exact> Store </NavLink>
           <button className="navbar__btn"> Login </button>
         </ul>
       </nav>

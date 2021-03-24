@@ -1,0 +1,23 @@
+.item-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category {
+  margin: 0.5rem;
+  padding: 0.2rem;
+  width: 4rem;
+  height: 1.5rem;
+  font-size: 0.7rem;
+  line-height: 1.5rem;
+  text-decoration: none;
+  background-color: var(--color-alpha);
+  color: white;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.category:hover {
+  filter: brightness(1.3);
+}

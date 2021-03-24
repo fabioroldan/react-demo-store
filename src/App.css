@@ -22,6 +22,17 @@
   outline: none;
 }
 
+.appear {
+  opacity: 0;
+  animation: appear 1s ease forwards;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
 .App {
   text-align: center;
   height: 101vh;

@@ -1,5 +1,5 @@
 .cart {
-  z-index: 1;
+  z-index: 2;
   padding: 0.5rem;
   border-radius: 1rem 1rem 0 0;
 }
@@ -32,6 +32,7 @@
   right: 2.5rem;
   height: 0;
   padding: 1rem;
+  pointer-events: none;
   opacity: 0;
   transition: height 0.3s ease;
 }
@@ -39,6 +40,7 @@
 .cart__items-container.active {
   display: block;
   height: 12rem;
+  pointer-events: auto;
   opacity: 1;
   padding: 1rem;
   border: solid 1px var(--color-alpha);

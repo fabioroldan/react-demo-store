@@ -32,18 +32,18 @@
   opacity: 1;
   background: var(--color-alpha);
   transition: right 0.5s ease;
+  z-index: 1;
 }
 
 .navbar__menu.active {
   right: 0;
   opacity: 1;
   transition: all 0.5s ease;
-  z-index: 1;
 }
 
 .navbar__link,
 .navbar__btn {
-  color: var(--color-beta);
+  color: black;
   text-decoration: none;
   margin: 1rem;
   height: 3rem;
@@ -59,11 +59,11 @@
   font-weight: bold;
 }
 
-.navbar__link.active::before {
+.navbar__link.active::before{
   content: " ";
   position: absolute;
   top: 1rem;
-  left: 1rem;
+  left: .5rem;
   width: 0.3rem;
   height: 1.1rem;
   background-color: var(--color-gamma);

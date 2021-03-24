@@ -1,7 +1,6 @@
 .item-detail-container {
   margin: auto;
   max-width: 64rem;
-  opacity: 0;
 }
 
 .item-container {
@@ -40,7 +39,4 @@
   display: inline-flex;
 }
 
-.appear{
-  opacity: 1;
-  transition: opacity .5s ease;
-}
+

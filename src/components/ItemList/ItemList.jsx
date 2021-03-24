@@ -1,13 +1,14 @@
 import Item from "../Item/Item";
 import "./ItemList.css"
 
-function ItemList (props) {
-
+function ItemList(props) {
   return (
-    <div className='item-list'>
+    <div className='item-list appear'>
       {
-        props.items.map(
-          item => <Item key={item.id} item={item} /> 
+        Object.keys(props.items).map(
+          (id) => {
+            return <Item key={id} id={id} item={props.items[id]} />;
+          }
         )
       }
     </div>

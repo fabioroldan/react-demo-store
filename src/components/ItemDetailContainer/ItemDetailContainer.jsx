@@ -1,37 +1,47 @@
 import { useState, useEffect } from 'react';
+import { useParams, Link } from "react-router-dom";
+
 import "./ItemDetailContainer.css";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import ItemCount from '../ItemCount/ItemCount';
 import backIcon from "../../icons/back-icon.svg";
 
-function ItemDetailContainer(props) {
+function ItemDetailContainer() {
   const [item, setItem] = useState('');
+  let { id } = useParams();
 
-  const getItem = (pos) => {
-    fetch(`https://react-demo-store-default-rtdb.firebaseio.com/items/${pos}.json`)
+  const getItem = (id) => {
+    fetch(`https://react-demo-store-default-rtdb.firebaseio.com/items/${id}.json`)
       .then(response => response.json())
-      .then((resultado) => setItem(resultado));
+      .then((result) => setItem(result))
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   };
-  const getRandomInt = (max) => {
-    return Math.floor(Math.random() * Math.floor(max));
-  }
+
   useEffect(() => {
-    getItem(getRandomInt(8));
-  }, []);
+    getItem(id);
+  }, [id]);
 
   return (
-    <div className={`item-detail-container ${item ? 'appear' : ''}`}>
-      <div className="breadcrumb">
-        <a href="#" className="back-link">
-          <img src={backIcon} className="back-link__icon" alt="" />
-          <span className="back-link__text">Back to the list </span>
-        </a>
-      </div>
-      <div className="item-container" >
-        <ItemDetail item={item} hidden/>
-        <ItemCount stock={item.stock} initial={0} />
-      </div>
-    </div>
+    <>
+      {
+        item === ''
+          ? <h3 className="center-text">Loading...</h3>
+          : <div className={`item-detail-container ${item ? 'appear' : 'Loading...'}`}>
+            <div className="breadcrumb">
+              <Link to="/" className="back-link">
+                <img src={backIcon} className="back-link__icon" alt="" />
+                <span className="back-link__text">Back to the list </span>
+              </Link>
+            </div>
+            <div className="item-container" >
+              <ItemDetail item={item} />
+              <ItemCount stock={item.stock} initial={0} />
+            </div>
+          </div>
+      }
+    </>
   )
 };
 

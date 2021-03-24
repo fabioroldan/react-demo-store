@@ -1,31 +1,36 @@
+.link {
+  color: black;
+  text-decoration: none;
+}
+
 figure {
-    margin: 0;
+  margin: 0;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 .title {
 }
 
 .description {
-    text-align: left;
+  text-align: left;
 }
 
 .price {
-    position: absolute;
-    right: -.5rem;
-    top: 70%;
-    display: block;
-    line-height: 3rem;
-    font-weight: bold;
-    width: 5rem;
-    height: 3rem;
-    border-radius: 2rem 0 0 2rem;
-    border: 1px solid var(--color-gamma);
-    color: black;
-    background-color: white;
+  position: absolute;
+  right: -.5rem;
+  top: 70%;
+  display: block;
+  line-height: 3rem;
+  font-weight: bold;
+  width: 5rem;
+  height: 3rem;
+  border-radius: 2rem 0 0 2rem;
+  border: 1px solid var(--color-gamma);
+  color: black;
+  background-color: white;
 }
 
 .item {
@@ -38,6 +43,7 @@ img {
   padding: 1rem;
   border: solid 1px var(--color-alpha);
   border-top: 3px solid var(--color-alpha);
+  opacity: 0;
 }
 
 .title {

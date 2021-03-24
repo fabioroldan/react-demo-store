@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
-import mockdb from "./mockdb.json";
+//import mockdb from "./mockdb.json";
 
-function App() {
-  const [items, setItems] = useState([]);
+ function App() {
   // const [currentStock, setCurrentStock] = useState(5);
   // const [cart, setCart] = useState(0);
 
@@ -15,20 +14,23 @@ function App() {
   //   setCurrentStock(() => setCurrentStock(currentStock - stock));
   //   setCart(cart + stock);
   // };
-
-  useEffect(() => {
-    new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(mockdb);
-      }, 1000);
-    }).then((resultado) => setItems(resultado));
-  });
-
+  
   return (
     <div className="App">
-      <NavBar />
-      <ItemDetailContainer />
-      <ItemListContainer items={items} greeting="There are no items yet" />
+      <BrowserRouter>
+        <NavBar />
+        <Switch>
+          <Route exact path="/">
+            <ItemListContainer />
+          </Route>
+          <Route exact path="/category/:id">
+          <ItemListContainer />
+          </Route>
+          <Route  path="/item/:id">
+            <ItemDetailContainer />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
