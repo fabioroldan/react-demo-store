@@ -37,7 +37,7 @@ img {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: auto;
+  height: 26rem;
   max-width: 20rem;
   margin: 1rem;
   padding: 1rem;

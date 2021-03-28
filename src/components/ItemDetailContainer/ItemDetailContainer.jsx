@@ -3,7 +3,6 @@ import { useParams, Link } from "react-router-dom";
 
 import "./ItemDetailContainer.css";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import ItemCount from '../ItemCount/ItemCount';
 import backIcon from "../../icons/back-icon.svg";
 
 function ItemDetailContainer() {
@@ -37,7 +36,6 @@ function ItemDetailContainer() {
             </div>
             <div className="item-container" >
               <ItemDetail item={item} />
-              <ItemCount stock={item.stock} initial={0} />
             </div>
           </div>
       }

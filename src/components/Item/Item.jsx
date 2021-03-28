@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 import './Item.css';
 function Item({id, item }) {
-    //console.log(id, item);
     return (
         <Link to={`/item/${id}`} className="link ">
             <div className="item appear" id={id}>

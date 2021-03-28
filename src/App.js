@@ -3,18 +3,10 @@ import "./App.css";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
+import NotFound from "./components/NotFound/NotFound";
 //import mockdb from "./mockdb.json";
 
- function App() {
-  // const [currentStock, setCurrentStock] = useState(5);
-  // const [cart, setCart] = useState(0);
-
-  // const addToCart = (e, stock) => {
-  //   e.preventDefault();
-  //   setCurrentStock(() => setCurrentStock(currentStock - stock));
-  //   setCart(cart + stock);
-  // };
-  
+function App() {
   return (
     <div className="App">
       <BrowserRouter>
@@ -23,11 +15,14 @@ import NavBar from "./components/NavBar/NavBar";
           <Route exact path="/">
             <ItemListContainer />
           </Route>
-          <Route exact path="/category/:id">
-          <ItemListContainer />
+          <Route path="/category/:id">
+            <ItemListContainer />
           </Route>
-          <Route  path="/item/:id">
+          <Route path="/item/:id">
             <ItemDetailContainer />
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
       </BrowserRouter>
