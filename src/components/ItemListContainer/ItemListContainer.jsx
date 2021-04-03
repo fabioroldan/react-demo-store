@@ -41,7 +41,7 @@ function ItemListContainer() {
                 } else {
                     setItemsFiltered(filtered);
                 }
-                
+
             } else {
                 setItemsFiltered(_items);
             }

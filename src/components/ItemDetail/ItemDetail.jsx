@@ -1,34 +1,49 @@
 import './ItemDetail.css';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import ItemCount from '../ItemCount/ItemCount';
+import { CartContext } from '../../context/CartContext';
 
-function ItemDetail({ item }) {
-    const initial = 0;
+
+function ItemDetail(props) {
+    const initial = 1;
     const [itemsQ, setItemsQ] = useState(initial);
-    const availableStock = item.stock - itemsQ;
+    const context = useContext(CartContext);
+    const item = {
+        id: props.id,
+        category: props.item.category,
+        description: props.item.description,
+        fullDescription: props.item.fullDescription,
+        pictureUrl: props.item.pictureUrl,
+        price: props.item.price,
+        stock: props.item.stock,
+        title: props.item.title
+    };
+    const stockInCart = context.getItemQty(item.id);
+    const [maxStock, setMaxStock] = useState(item.stock - stockInCart);
+    const availableStock = maxStock - itemsQ;
 
     const Stock = () => {
         return (
             <>
                 <p className="stock">Available Stock: {availableStock}</p>
-                <ItemCount min="0" max={item.stock} value={itemsQ} onAdd={onAdd} onSubstract={onSubstract} />
+                <ItemCount min="0" max={maxStock} value={itemsQ} onAdd={onAdd} onSubstract={onSubstract} />
                 <div className="btn-group">
-                    <Link to="/cart" className={`btn--big ${itemsQ || 'disabled'}`}  >BUY IT NOW</Link>
-                    <button className="btn--big" disabled>ADD TO CART</button>
+                    <Link to="/cart" onClick={() => { onAddToCart() }} className={`btn--big ${itemsQ === 0 ? 'disabled' : ''}`}  >BUY IT NOW</Link>
+                    <button onClick={() => { onAddToCart() }} className={`btn--big ${itemsQ === 0 ? 'disabled' : ''}`} >ADD TO CART</button>
                 </div>
             </>
         )
     }
 
     const NoStock = () => {
-        return <h3> No stock available </h3>
+        return <h3 className="appear"> No more stock available </h3>
     }
 
     const onAdd = (e) => {
         e.preventDefault();
-        if (itemsQ > item.stock) {
-            setItemsQ(item.stock);
+        if (itemsQ > maxStock) {
+            setItemsQ(maxStock);
         } else {
             setItemsQ(itemsQ + 1);
         }
@@ -43,9 +58,15 @@ function ItemDetail({ item }) {
         }
     };
 
-    const IsAvailable = item.stock > 0
+    const IsAvailable = maxStock > 0
         ? Stock
         : NoStock;
+
+    const onAddToCart = () => {
+        context.addItem(item, itemsQ);
+        setMaxStock(maxStock - itemsQ);
+        setItemsQ(0);
+    };
 
     return (
         <div className="item-detail">

@@ -20,7 +20,7 @@ img {
 
 .price {
   position: absolute;
-  right: -.5rem;
+  right: -0.5rem;
   top: 70%;
   display: block;
   line-height: 3rem;

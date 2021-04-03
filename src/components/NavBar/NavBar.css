@@ -1,10 +1,16 @@
 .navbar {
   display: flex;
   justify-content: flex-end;
-  position: relative;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
+  width: 100vw;
   height: 4rem;
   align-items: center;
   font-size: 1.2rem;
+  z-index: 10;
+  background-color: white;
+  margin-right: 2rem;
 }
 
 .navbar__logo {
@@ -12,8 +18,8 @@
   margin: 1rem 0 0 1rem;
   cursor: pointer;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 0rem;
+  top: -0.3rem;
 }
 
 .navbar__menu {
@@ -59,11 +65,11 @@
   font-weight: bold;
 }
 
-.navbar__link.active::before{
+.navbar__link.active::before {
   content: " ";
   position: absolute;
   top: 1rem;
-  left: .5rem;
+  left: 0.5rem;
   width: 0.3rem;
   height: 1.1rem;
   background-color: var(--color-gamma);
@@ -83,6 +89,10 @@
   text-transform: uppercase;
   outline: none;
   font-size: 0.9rem;
+}
+
+.menu-btn {
+  margin-right: 2rem;
 }
 
 @media screen and (min-width: 750px) {

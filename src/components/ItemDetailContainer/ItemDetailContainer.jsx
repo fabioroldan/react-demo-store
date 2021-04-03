@@ -35,7 +35,7 @@ function ItemDetailContainer() {
               </Link>
             </div>
             <div className="item-container" >
-              <ItemDetail item={item} />
+              <ItemDetail item={item} id={id}/>
             </div>
           </div>
       }
