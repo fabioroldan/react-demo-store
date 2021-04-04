@@ -1,13 +1,14 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 const CartContext = createContext();
 
 function CartProvider({ defaultValue = [], children }) {
     const [cart, setCart] = useState([]);
     const [totalQty, setTotalQty] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
 
-    const addItem = (item, quantity) => {
-        setTotalQty(totalQty + quantity)
+    const addItem = (e, item, quantity) => {
+        e.preventDefault();
         let pos = isInCart(item.id);
         if (pos >= 0) {
             let updatedCart = cart;
@@ -16,17 +17,37 @@ function CartProvider({ defaultValue = [], children }) {
         } else {
             setCart([...cart, { item, quantity }]);
         }
+        getTotalPrice();
+        getTotalQty();
     }
 
-    const removeItem = (id) => {
-        let pos = isInCart(id);
+    const substractItem = (e, item, quantity) => {
+        e.preventDefault();
+        let pos = isInCart(item.id);
+        if (pos >= 0) {
+            let updatedCart = cart;
+            updatedCart[pos] = { item, quantity: updatedCart[pos].quantity - quantity };
+            setCart(updatedCart)
+        } else {
+            setCart([...cart, { item, quantity }]);
+        }
+        getTotalPrice();
+        getTotalQty();
+
+    }
+
+    const removeItem = (pos) => {
         let updatedCart = cart;
         updatedCart.splice(pos, 1);
         setCart(updatedCart);
+        getTotalPrice();
+        getTotalQty();
     }
 
-    const clear = (item, quantity) => {
+    const clear = () => {
         setCart([]);
+        setTotalQty(0);
+        setTotalPrice(0);
     }
 
     const isInCart = (id) => {
@@ -56,9 +77,27 @@ function CartProvider({ defaultValue = [], children }) {
         }
     }
 
+    const getTotalPrice = () => {
+        let total = cart.reduce((acc, cur) => {
+            return (cur.item.price * cur.quantity) + acc
+        }, 0);
+        setTotalPrice(total);
+    }
+
+    const getTotalQty = () => {
+        let total = cart.reduce((acc, cur) => {
+            return cur.quantity + acc
+        }, 0);
+        setTotalQty(total);
+    }
+
+    useEffect(() => {
+        getTotalQty();
+        getTotalPrice();
+    });
 
     return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, clear, isInCart, getItemQty, totalQty }}>
+        <CartContext.Provider value={{ cart, setCart, addItem, substractItem, removeItem, clear, isInCart, getItemQty, totalQty, totalPrice }}>
             {children}
         </CartContext.Provider>
     );
@@ -71,4 +110,5 @@ function CartConsumer({ defaultValue = [], children }) {
         </CartContext.Consumer>
     );
 }
+
 export { CartProvider, CartConsumer, CartContext };

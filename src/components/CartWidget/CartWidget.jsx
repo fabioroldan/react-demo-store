@@ -1,6 +1,6 @@
 import { CartContext } from '../../context/CartContext';
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import cartIcon from "../../icons/cart-icon.svg";
 import './CartWidget.css';
 
@@ -13,35 +13,39 @@ function CartWidget(props) {
     };
 
     const handleBlur = () => {
-        setActive(false);
+        setTimeout(()=> setActive(false), 500);
     };
 
     return (
 
-        <div className="cart">
+        <div className="cart-widget">
             <button className="icon-btn" onClick={handleClick} onBlur={handleBlur}>
-                <img src={cartIcon} className="cart__icon" alt="" />
-                <span className={context.totalQty !== 0 ? 'cart__quantity' : ''} hidden>{context.totalQty}</span>
+                <img src={cartIcon} className="cart-widget__icon" alt="" />
+                <span className={context.totalQty === 0 ? '' : 'cart-widget__quantity appear'} hidden>{context.totalQty}</span>
             </button>
-            <div className={`cart__items-container ${active ? 'active' : ''}`}>
+            <div className={`cart-widget__items-container ${active ? 'active' : ''}`}>
                 <h5>CART LIST ITEMS</h5>
                 <ul>
                     {
                         context.cart.length === 0
                             ? <li>No items yet</li>
                             : context.cart.map(
-                                (pos) => {
-                                    return <li key={pos.item.id}><span>{pos.item.title}</span><span>{pos.quantity}</span> </li>;
+                                (obj) => {
+                                    return (
+                                        <li key={obj.item.id}>
+                                            <span>{obj.item.title}</span>
+                                            <span>{obj.quantity}</span>
+                                        </li>
+                                    );
                                 }
                             )
                     }
                 </ul>
-                <Link to="/cart" className={`btn--big ${context.cart.length === 0 ? 'disabled': '' }`}  >GO TO CART</Link>
+                <NavLink to="/cart" className="btn--big">GO TO CART</NavLink>
+
             </div>
         </div>
-
     );
 }
-
 
 export default CartWidget;

@@ -4,6 +4,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
 import NotFound from "./components/NotFound/NotFound";
+import Cart from "./components/Cart/Cart";
 //import mockdb from "./mockdb.json";
 import {CartProvider} from "./context/CartContext";
 
@@ -16,6 +17,9 @@ function App() {
           <Switch>
             <Route exact path="/">
               <ItemListContainer />
+            </Route>
+            <Route path="/cart">
+              <Cart />
             </Route>
             <Route path="/category/:id">
               <ItemListContainer />

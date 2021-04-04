@@ -11,6 +11,8 @@
   z-index: 10;
   background-color: white;
   margin-right: 2rem;
+  box-shadow: 0 0 0.5rem 0.5rem rgba(235, 235, 235, 0.514);
+
 }
 
 .navbar__logo {
@@ -123,10 +125,5 @@
 
   .menu-btn {
     display: none;
-  }
-
-  .cart {
-    order: 1;
-    margin-right: 1rem;
   }
 }

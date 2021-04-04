@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill-rule="evenodd" clip-rule="evenodd"
+    image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <defs />
+    <defs>
+        <style>
+            .str0 {
+                stroke: #ff5100;
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-miterlimit: 2.61313
+            }
+
+            .fil0 {
+                fill: none
+            }
+        </style>
+    </defs>
+    <g id="Layer_x0020_1">
+        <path
+            d="M19.52 7.9H8.48m3.97-.12a1.55 1.55 0 113.1 0M9.2 9.95L9.72 21h8.55l.52-11.05m-6.37 1.55l.17 6.73m2.81 0l.17-6.73"
+            class="fil0 str0" />
+    </g>
+</svg>

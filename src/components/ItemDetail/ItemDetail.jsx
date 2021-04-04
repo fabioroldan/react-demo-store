@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import ItemCount from '../ItemCount/ItemCount';
 import { CartContext } from '../../context/CartContext';
 
-
 function ItemDetail(props) {
     const initial = 1;
     const [itemsQ, setItemsQ] = useState(initial);
@@ -29,8 +28,8 @@ function ItemDetail(props) {
                 <p className="stock">Available Stock: {availableStock}</p>
                 <ItemCount min="0" max={maxStock} value={itemsQ} onAdd={onAdd} onSubstract={onSubstract} />
                 <div className="btn-group">
-                    <Link to="/cart" onClick={() => { onAddToCart() }} className={`btn--big ${itemsQ === 0 ? 'disabled' : ''}`}  >BUY IT NOW</Link>
-                    <button onClick={() => { onAddToCart() }} className={`btn--big ${itemsQ === 0 ? 'disabled' : ''}`} >ADD TO CART</button>
+                    <Link to="/cart" className={`btn--big`}  >GO TO CART</Link>
+                    <button onClick={(e) => { onAddToCart(e) }} className={`btn--big ${itemsQ === 0 ? 'disabled' : ''}`} >ADD TO CART</button>
                 </div>
             </>
         )
@@ -62,8 +61,8 @@ function ItemDetail(props) {
         ? Stock
         : NoStock;
 
-    const onAddToCart = () => {
-        context.addItem(item, itemsQ);
+    const onAddToCart = (e) => {
+        context.addItem(e, item, itemsQ);
         setMaxStock(maxStock - itemsQ);
         setItemsQ(0);
     };

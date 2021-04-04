@@ -38,12 +38,13 @@
   height: 2rem;
   border: none;
   border-radius: 0;
-  background-color: gainsboro;
+  background-color: rgb(236, 236, 236);
 }
 
 .input-number {
-  padding: 0 1rem;
-  width: calc(100% - 6rem);
+  padding: 0 ;
+  width: calc(100% - 4rem);
+  min-width: 2rem;
   text-align: center;
 }
 
