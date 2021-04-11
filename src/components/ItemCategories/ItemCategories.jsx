@@ -6,7 +6,7 @@ function ItemCategories({ categories }) {
         <div className="item-categories">
             <Link to={`/`} key={'all'} className="category">all</Link>
             {
-                Object.keys(categories).map(category => <Link to={`/category/${category}`} key={category} className="category">{category}</Link>)
+                categories.map(category => <Link to={`/category/${category.name}`} key={category.name} className="category">{category.name}</Link>)
             }
         </div>
     )

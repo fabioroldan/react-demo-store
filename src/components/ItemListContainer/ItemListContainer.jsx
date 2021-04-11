@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./ItemListContainer.css";
 import ItemList from "../ItemList/ItemList";
 import ItemCategories from "../ItemCategories/ItemCategories";
+import { getFirestore } from '../../firebase';
 
 function ItemListContainer() {
     let [categories, setCategories] = useState('');
@@ -11,32 +12,44 @@ function ItemListContainer() {
     let { id: idCategory } = useParams();
 
     const getAll = () => {
-        fetch('https://react-demo-store-default-rtdb.firebaseio.com/.json')
-            .then((response) => {
-                return response.json();
-            })
-            .then((result) => {
-                setItems(result.items);
-                setCategories(result.categories);
-            })
-            .catch((error) => {
-                console.error("Error:", error);
+        const db = getFirestore();
+        const itemsCollection = db.collection('items');
+        itemsCollection.get().then((querySnapshot) => {
+            if (querySnapshot.size === 0) {
+                console.log('No results');
+            }
+            let snapshot = querySnapshot.docs.map(doc => {
+                return { ...doc.data(), id: doc.id }
             });
+            setItems(snapshot);
+        }).catch((error) => {
+            console.error("Error:", error);
+        }).finally(() => {
+            console.log("Loaded");
+        });
+
+        const categoriesCollection = db.collection('categories');
+        categoriesCollection.get().then((querySnapshot) => {
+            if (querySnapshot.size === 0) {
+                console.log('No results');
+            }
+            let snapshot = querySnapshot.docs.map((doc) => doc.data());
+            setCategories(snapshot);
+        }).catch((error) => {
+            console.error("Error:", error);
+        }).finally(() => {
+            console.log("Loaded");
+        });
     };
 
     const filterByCategory = (_category, _items) => {
         if (_items !== '') {
             if (_category !== undefined) {
-                let filtered = Object.keys(_items)
-                    .filter((key) => {
-                        return _items[key].category === _category;
-                    })
-                    .reduce((obj, key) => {
-                        obj[key] = _items[key];
-                        return obj;
-                    }, {});
-
-                if (Object.keys(filtered).length === 0) {
+                let filtered = _items
+                    .filter((obj) => {
+                        return obj.category === _category;
+                    });
+                if (filtered.length === 0) {
                     setItemsFiltered('no category found');
                 } else {
                     setItemsFiltered(filtered);

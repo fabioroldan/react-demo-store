@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from "react-router-dom";
-
+import { getFirestore } from '../../firebase';
 import "./ItemDetailContainer.css";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import backIcon from "../../icons/back-icon.svg";
@@ -10,12 +10,10 @@ function ItemDetailContainer() {
   let { id } = useParams();
 
   const getItem = (id) => {
-    fetch(`https://react-demo-store-default-rtdb.firebaseio.com/items/${id}.json`)
-      .then(response => response.json())
-      .then((result) => setItem(result))
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+    const db = getFirestore();
+    db.collection('items').doc(id).get().then((snapshot) => {
+      setItem(snapshot.data());
+    });
   };
 
   useEffect(() => {
@@ -35,7 +33,7 @@ function ItemDetailContainer() {
               </Link>
             </div>
             <div className="item-container" >
-              <ItemDetail item={item} id={id}/>
+              <ItemDetail item={item} id={id} />
             </div>
           </div>
       }
