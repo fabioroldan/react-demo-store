@@ -1,0 +1,116 @@
+.checkout {
+  max-width: 30rem;
+  padding: 1rem;
+  margin: 1rem auto;
+  border: solid 1px var(--color-alpha);
+  border-top: 3px solid var(--color-alpha);
+  position: relative;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+@property --percent {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false;
+}
+
+.checkout input {
+  --percent: 0%;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(
+    90deg,
+    var(--color-gamma) var(--percent),
+    #eee var(--percent)
+  );
+  caret-color: var(--color-gamma);
+  height: 3rem;
+  margin: 1rem 0 0;
+  padding: 1rem 0 0 0.5rem;
+  background-color: transparent;
+  transition: --percent 0.5s ease-in-out;
+}
+
+.checkout input:hover,
+.checkout input:focus,
+.checkout input:not(:placeholder-shown) {
+  /* box-shadow: inset 0 0 0 0 white, inset 0 -1px 0 0 lightgray; */
+  --percent: 100%;
+  transition: --percent 0.5s ease-in-out;
+  border-image-source: linear-gradient(
+    90deg,
+    var(--color-gamma) var(--percent),
+    #eee var(--percent)
+  );
+}
+
+.checkout label {
+  display: inline-block;
+  transform: translateY(-1.5rem);
+  height: 1.5rem;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.checkout input:focus + label,
+.checkout input:not(:placeholder-shown) + label {
+  transform: translateY(-3rem);
+}
+
+.checkout__title {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 1rem 0 2rem;
+}
+
+.checkout-order {
+  display: grid;
+  justify-items: start;
+  list-style-type: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.checkout-order__head,
+.checkout-order__item {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  width: 100%;
+  padding: 0.5rem 0;
+  gap: 15px 10px;
+}
+.checkout-order__item {
+  padding-left: 0.5rem;
+}
+
+.checkout-order__head {
+  font-weight: 700;
+  border-bottom: 1px solid var(--color-gamma);
+}
+
+.checkout-order__total {
+  border-top: 1px solid var(--color-gamma);
+  padding: 0.5rem 0;
+  font-weight: 700;
+  width: 100%;
+  text-align: right;
+}
+
+.checkout .btn--big {
+  text-decoration: none;
+  text-align: center;
+  line-height: 2rem;
+  margin-bottom: 0;
+  margin: 2rem 0 0 0;
+}
+
+.checkout .btn--big:disabled{
+  cursor: not-allowed;
+}
