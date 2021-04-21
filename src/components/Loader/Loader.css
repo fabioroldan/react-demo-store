@@ -1,0 +1,18 @@
+.loader {
+  width: 5%;
+  height: auto;
+  margin: 2rem;
+}
+
+.path {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 100;
+  animation: dash 1s linear infinite;
+  stroke: #fab10c;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

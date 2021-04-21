@@ -19,6 +19,7 @@
 .env.production.local
 .github
 TODO
+src/firebaseConfig.js
 
 npm-debug.log*
 yarn-debug.log*

@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { getFirestore } from '../../firebase';
 import "./ItemDetailContainer.css";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import Loader from "../Loader/Loader";
 import backIcon from "../../icons/back-icon.svg";
 
 function ItemDetailContainer() {
@@ -24,7 +25,7 @@ function ItemDetailContainer() {
     <>
       {
         item === ''
-          ? <h3 className="center-text">Loading...</h3>
+          ? <Loader/>
           : <div className={`item-detail-container ${item ? 'appear' : 'Loading...'}`}>
             <div className="breadcrumb">
               <Link to="/" className="back-link">

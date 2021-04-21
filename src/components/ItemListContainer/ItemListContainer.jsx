@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./ItemListContainer.css";
 import ItemList from "../ItemList/ItemList";
 import ItemCategories from "../ItemCategories/ItemCategories";
+import Loader from "../Loader/Loader";
 import { getFirestore } from '../../firebase';
 
 function ItemListContainer() {
@@ -73,7 +74,7 @@ function ItemListContainer() {
         <div className="item-list-container" >
             {
                 categories === ''
-                    ? <h3 className="center-text">Loading...</h3>
+                    ? <Loader/>
                     : < ItemCategories categories={categories} />
             }
             {

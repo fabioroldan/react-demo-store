@@ -6,7 +6,7 @@
   border-top: 3px solid var(--color-alpha);
   position: relative;
   text-align: left;
-  transition: all 0.3s ease;
+  opacity: 0;
 }
 
 .orders__title {

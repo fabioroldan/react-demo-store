@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Orders.css';
+import Loader from '../Loader/Loader';
 import backIcon from "../../icons/back-icon.svg";
 import deleteIcon from "../../icons/delete-icon.svg";
 import { getFirestore } from '../../firebase';
@@ -57,14 +58,14 @@ function Orders() {
             </div>
             {
                 (orders.length === 0)
-                    ? <h2 className="appear" > No orders yet</h2>
+                    ? <div className="appear" > <Loader/> </div>
                     : <div className="orders appear" >
                         <div className="orders__title">ORDERS</div>
                         {
                             orders.map(
                                 (order) => {
                                     return (
-                                        <ul className="order" key={order.id}>
+                                        <ul className="order appear" key={order.id}>
                                             <button onClick={() => { deleteOrder(order.id) }} className="order__delete">
                                                 <img src={deleteIcon} className="delete-icon" alt="" />
                                             </button>
