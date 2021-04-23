@@ -4,6 +4,7 @@ import './Orders.css';
 import Loader from '../Loader/Loader';
 import backIcon from "../../icons/back-icon.svg";
 import deleteIcon from "../../icons/delete-icon.svg";
+import formatDate from "../../utils/formatDate"
 import { getFirestore } from '../../firebase';
 
 function Orders() {
@@ -27,16 +28,6 @@ function Orders() {
         });
     };
 
-    function formatDate(dateFirestore) {
-        let timestamp= dateFirestore.seconds * 1000 + dateFirestore.nanoseconds /1000000;
-        let dateObj = new Date(timestamp);
-        let date = dateObj.getDate();
-        let month = dateObj.getMonth() + 1;
-        let year = dateObj.getFullYear();
-        let fullDate = `${date}/${month}/${year}`;
-        return fullDate;
-    }
-
     function deleteOrder(id) {
         const order = db.collection("orders").doc(id);
         order.delete();
@@ -58,7 +49,7 @@ function Orders() {
             </div>
             {
                 (orders.length === 0)
-                    ? <div className="appear" > <Loader/> </div>
+                    ? <div className="appear" > <Loader /> </div>
                     : <div className="orders appear" >
                         <div className="orders__title">ORDERS</div>
                         {
@@ -82,7 +73,7 @@ function Orders() {
                                                     <b>Email: </b> {order.buyer.email}
                                                 </li>
                                                 <li>
-                                                    <b>Date: </b> { formatDate(order.date)}
+                                                    <b>Date: </b> {formatDate(order.date)}
                                                 </li>
                                             </ul>
                                             <li className="order__head">
