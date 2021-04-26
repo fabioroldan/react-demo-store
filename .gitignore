@@ -20,7 +20,9 @@
 .github
 TODO
 src/firebaseConfig.js
+.firebase
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.firebase/hosting.YnVpbGQ.cache
