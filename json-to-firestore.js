@@ -3,11 +3,7 @@ import "firebase/firestore";
 import {firebaseConfig} from './src/firebaseConfig';
 
 // Initialize Cloud Firestore through Firebase
-firebase.initializeApp({
-  apiKey: firebaseConfig.apiKey,
-  authDomain: firebaseConfig.authDomain,
-  projectId: firebaseConfig.projectId,
-});
+firebase.initializeApp(firebaseConfig);
 
 var db = firebase.firestore();
 

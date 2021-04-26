@@ -1,4 +1,32 @@
-# Getting Started with Create React App
+# React Demo Store (WIP)
+
+**This is a store made with react and firebase created for educational purposes**
+
+[![React Demo Store](https://i9.ytimg.com/vi_webp/eLRd0wbxDgg/mqdefault.webp?time=1619422500000&sqp=CKTamYQG&rs=AOn4CLBjhiQXe7B3PdDEQHqkgfohpQ5t_w)]( https://www.youtube.com/watch?v=eLRd0wbxDgg )
+
+To run this site you must:
+
+1. Clone the repository
+2. Install all dependencies `npm i`
+3. Create a firestore project
+4. Create a `src/firebaseConfig.js` file with your firebase configuration
+    ```javascript
+    
+    export const firebaseConfig = {
+        apiKey: "<API_KEY>",
+        authDomain: "<PROJECT_ID.firebaseapp.com>",
+        databaseURL: "<https://PROJECT_ID.firebaseio.com>",
+        projectId: "<PROJECT_ID>",
+        storageBucket: "<PROJECT_ID.appspot.com>",
+        messagingSenderId: "<SENDER_ID>",
+        appId: "<APP_ID>",
+        measurementId: "<G-MEASUREMENT_ID>",
+    };
+    ```
+
+5. Now you can populate your firestore database by running `node json-to-firestore.js`
+
+And that's it! you can now run a local server with `npm start`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
