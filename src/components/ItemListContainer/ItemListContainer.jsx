@@ -25,8 +25,6 @@ function ItemListContainer() {
             setItems(snapshot);
         }).catch((error) => {
             console.error("Error:", error);
-        }).finally(() => {
-            console.log("Loaded");
         });
 
         const categoriesCollection = db.collection('categories');
@@ -38,8 +36,6 @@ function ItemListContainer() {
             setCategories(snapshot);
         }).catch((error) => {
             console.error("Error:", error);
-        }).finally(() => {
-            console.log("Loaded");
         });
     };
 
