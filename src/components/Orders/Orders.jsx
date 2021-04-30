@@ -23,8 +23,6 @@ function Orders() {
             setOrders(snapshot);
         }).catch((error) => {
             console.error("Error:", error);
-        }).finally(() => {
-            console.log("Orders loaded");
         });
     };
 
@@ -37,7 +35,7 @@ function Orders() {
 
     useEffect(() => {
         getAll();
-    }, []);
+    });
 
     return (
         <div >

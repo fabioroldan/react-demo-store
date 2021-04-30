@@ -30,6 +30,8 @@ To run this site you must:
 
 And that's it! you can now run a local server with `npm start`
 
+If you are setting a different port than 3000 in localhost modify the base of index.html ```<base href = "http://localhost:3000"/>```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
