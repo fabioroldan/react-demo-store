@@ -2,7 +2,7 @@
 
 **This is a store made with react and firebase created for educational purposes**
 
-[![React Demo Store](https://i9.ytimg.com/vi_webp/eLRd0wbxDgg/mqdefault.webp?time=1619461800000&sqp=CKiNnIQG&rs=AOn4CLCJI6250N1E5PNWvX5S--I1u8oraA)]( https://www.youtube.com/watch?v=eLRd0wbxDgg )
+[![React Demo Store](https://img.youtube.com/vi/eLRd0wbxDgg/0.jpg)]( https://youtu.be/eLRd0wbxDgg )
 
 You can see the demo [here](https://react-demo-store.web.app/)
 

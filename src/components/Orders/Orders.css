@@ -28,7 +28,7 @@
 }
 
 .order h4 {
-  margin-bottom: 0;
+  margin: 0.9rem 0 0;
 }
 
 .order__id {
@@ -37,7 +37,7 @@
   width: 100%;
   padding: 0.25rem 0;
   margin: 0;
-  color: lightgrey;
+  color: var(--color-alpha);
 }
 
 .order__buyer {
@@ -47,13 +47,22 @@
   font-size: 0.9rem;
 }
 
+.order__buyer li {
+  margin: .5rem 0;
+}
+
 .order__delete {
   position: absolute;
-  top: 0.5rem;
-  right: 0;
+  top: 0.6rem;
+  right: 0.2rem;
   border: none;
   background-color: transparent;
   cursor: pointer;
+  filter:brightness(90%);
+}
+.order__delete:hover {
+  filter:brightness(100%);
+
 }
 
 .order__head,
